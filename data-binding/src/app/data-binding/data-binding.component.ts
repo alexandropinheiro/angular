@@ -9,6 +9,12 @@ export class DataBindingComponent implements OnInit {
 
   url:string = 'http://loiane.com';
   cursoAngular: boolean = true;
+
+  valorInicial:number = 15;
+
+  onMudouValor(evento){
+    console.log(evento.novoValor);
+  }
   constructor() { }
 
   ngOnInit() {
