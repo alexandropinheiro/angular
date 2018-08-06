@@ -1,0 +1,37 @@
+
+<section class="two-way-binbing">
+  <article>
+    <h3>Two-way DataBinding</h3>
+    <div>
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+      
+      <input type="text" bindon-ngModel="nome">
+      <input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+    
+      <input type="text" [(ngModel)]="pessoa.nome">
+      <!-- Para funcionar o ngModel é necessário importar o FormsModule -->
+      <p>
+        Você digitou: {{ nome }}
+      </p>      
+
+      <input type="text"
+        [value]="pessoa.nome"
+        (input)="pessoa.nome = $event.target.value"
+      />
+      
+      <input type="text"
+        [value]="pessoa.idade"
+        (input)="pessoa.idade = $event.target.value"
+      />
+
+      <p>Meu nome &eacute; {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+
+    </div>
+  </article>
+</section>
